@@ -10,9 +10,8 @@ import avatar8 from './women2.png';
 import avatar9 from './women3.png';
 import avatar10 from './women4.png';
 import avatar11 from './women5.png';
-
-import dangle from './dangle.jpg';
+import avatar12 from './women6.png';
 
 export default { avatar1,avatar2, avatar3,avatar4,
 avatar5, avatar6, avatar7, avatar8,avatar9,avatar10,
-avatar11,dangle };
+avatar11,avatar12 };
