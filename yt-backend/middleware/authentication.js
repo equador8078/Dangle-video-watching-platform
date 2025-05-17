@@ -12,7 +12,6 @@ function checkIfCookieExists(cookieName) {
             const user = await USER.findById(payload._id);
             
             if (!user) {
-                console.log("User not found in database");
                 return next();
             }
             

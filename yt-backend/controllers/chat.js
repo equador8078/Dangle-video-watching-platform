@@ -66,7 +66,6 @@ const generateAiResponse = async (prompt, topVideos) => {
         return response.choices[0].message.content;
     }
     catch(error){
-        console.log("Error while getting response from AI", error);
         return res.status(500).json({message:"Error has occurred while getting response from AI"})
     }
 

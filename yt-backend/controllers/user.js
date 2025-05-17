@@ -4,7 +4,6 @@ const axios= require('axios');
 
 const signup=async(req,res)=>{
     const {fullName, email, password}=req.body;
-    console.log(req.body);
     try{
         await USER.create({
             fullName,
