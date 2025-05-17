@@ -9,7 +9,7 @@ const aiRouter=require('./routes/chat')
 const commentRouter=require('./routes/comments');
 const {checkIfCookieExists}=require("./middleware/authentication")
 
-const PORT=3200;
+
 const app=express();
 
 const _dirname =path.resolve();
@@ -43,4 +43,4 @@ app.get('*',(req,res)=>{
     res.sendFile(path.resolve(_dirname,"yt-frontend","dist","index.html"));
 })
 
-app.listen(PORT,()=>console.log(`Server started at PORT:${PORT}`));
+app.listen(process.env.PORT,()=>console.log(`Server started at PORT:${process.env.PORT}`));
