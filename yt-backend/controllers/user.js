@@ -99,7 +99,6 @@ const logout=(req,res)=>{
 const updateUserDetails=async(userId,videoId)=>{
     try{
         if(!userId){
-            console.log("User is unauthorized! Can't save history!")
             return;
         }
 

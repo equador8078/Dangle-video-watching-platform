@@ -107,6 +107,9 @@ const fetchSingleVideo = async (req, res) => {
 
 const fetchHistoryVideo = async (req, res) => {
     try {
+        if(!req.user){
+            return ;
+        }
         const { watchHistory } = req.user;
 
         if (!watchHistory || watchHistory.length === 0) {
