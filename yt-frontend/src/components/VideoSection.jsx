@@ -18,7 +18,7 @@ const VideoSection = () => {
         const fetchVideos = async () => {
             setLoading(true)
             try {
-                const response = await axios.get(`http://localhost:3200/videos/getAllVideos`,
+                const response = await axios.get(`https://dangle-video-watching-platform-2.onrender.com/videos/getAllVideos`,
                     {
                         params: {
                             isPlaylistVideos: false,
@@ -45,7 +45,7 @@ const VideoSection = () => {
         setChatLoading(true);
         setPrompt("");
         try {
-            const response = await axios.post("http://localhost:3200/ai/getAiRecommendedVideos",
+            const response = await axios.post("https://dangle-video-watching-platform-2.onrender.com/ai/getAiRecommendedVideos",
                 {
                     prompt: prompt,
                 })

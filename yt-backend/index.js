@@ -22,7 +22,7 @@ mongoose.connect(URL).then(()=>console.log("MongoDB connected!"))
 app.use(express.urlencoded({extended:false}))
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://dangle-video-watching-platform-2.onrender.com",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]

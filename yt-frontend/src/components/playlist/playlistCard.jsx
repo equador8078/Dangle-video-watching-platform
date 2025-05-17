@@ -4,7 +4,7 @@ const PlaylistCard = ({ playlist, setPlaylistRefresh, setVideosArray }) => {
 
     const deletePlaylist = async () => {
         try {
-            const response = await axios.delete(`http://localhost:3200/user/deletePlaylist/${playlist._id}`);
+            const response = await axios.delete(`https://dangle-video-watching-platform-2.onrender.com/user/deletePlaylist/${playlist._id}`);
         }
         catch (error) {
             console.log("error while deleting playlist ", error)

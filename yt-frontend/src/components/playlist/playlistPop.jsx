@@ -13,7 +13,7 @@ const PlaylistPop = ({ videoId, setShowPlaylist,setOpen }) => {
     useEffect(() => {
         const handleFetchPlaylists = async () => {
             try {
-                const response = await axios.get(`http://localhost:3200/user/playlists`, {
+                const response = await axios.get(`https://dangle-video-watching-platform-2.onrender.com/user/playlists`, {
                     withCredentials: true,
                 });
                 setPlaylists(response.data);
@@ -30,7 +30,7 @@ const PlaylistPop = ({ videoId, setShowPlaylist,setOpen }) => {
         try {
             console.log("Creating playlist...");
             const response=await axios.post(
-                `http://localhost:3200/user/createPlaylist`,
+                `https://dangle-video-watching-platform-2.onrender.com/user/createPlaylist`,
                 { playlistName: newPlaylistName },
                 { withCredentials: true }
             );
@@ -45,7 +45,7 @@ const PlaylistPop = ({ videoId, setShowPlaylist,setOpen }) => {
     const handleAddToPlaylist = async (playlistId) => {
         try {
             await axios.post(
-                `http://localhost:3200/user/addToPlaylist`,
+                `https://dangle-video-watching-platform-2.onrender.com/user/addToPlaylist`,
                 {playlistId:playlistId,
                 videoId:videoId
                 },

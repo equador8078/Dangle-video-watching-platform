@@ -7,7 +7,7 @@ const HistorySection = () => {
 
     const deleteHistory=async(videoId)=>{
         try{
-            await axios.delete(`http://localhost:3200/user/deleteHistory/${videoId}`,
+            await axios.delete(`https://dangle-video-watching-platform-2.onrender.com/user/deleteHistory/${videoId}`,
                 {withCredentials:true}
             )
             setHistoryVideos(prevVideos => prevVideos.filter(video => video._id !== videoId));
@@ -21,7 +21,7 @@ const HistorySection = () => {
         const fetchVideos = async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:3200/videos/historyVideos",
+                    "https://dangle-video-watching-platform-2.onrender.com/videos/historyVideos",
                     { withCredentials: true }
                 );
                 setHistoryVideos(response.data);

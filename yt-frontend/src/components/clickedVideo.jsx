@@ -31,7 +31,7 @@ const ClickedVideo = () => {
 
     const handelFetchSideVideos = async () => {
         try {
-            const response = await axios.get(`http://localhost:3200/videos/fetchSideVideos/${videoId}`,
+            const response = await axios.get(`https://dangle-video-watching-platform-2.onrender.com/videos/fetchSideVideos/${videoId}`,
                 { withCredentials: true }
             )
             setSideVideos(response.data || null);
@@ -45,7 +45,7 @@ const ClickedVideo = () => {
     const handelVideoFetch = async () => {
 
         try {
-            const response = await axios.get(`http://localhost:3200/videos/getAVideo/${videoId}`,
+            const response = await axios.get(`https://dangle-video-watching-platform-2.onrender.com/videos/getAVideo/${videoId}`,
                 { withCredentials: true }
             );
             if (!response.data) {
@@ -75,7 +75,7 @@ const ClickedVideo = () => {
 
     const handelLikeDislike = async (liked, videoId) => {
         try {
-            const response = await axios.put('http://localhost:3200/videos/updateLikeDislike',
+            const response = await axios.put('https://dangle-video-watching-platform-2.onrender.com/videos/updateLikeDislike',
                 {
                     liked: liked,
                     videoId: videoId
@@ -100,7 +100,7 @@ const ClickedVideo = () => {
 
     const handleFetchComments = async () => {
         try {
-            const response = await axios.get(`http://localhost:3200/comment/fetchAllComments/${videoId}`);
+            const response = await axios.get(`https://dangle-video-watching-platform-2.onrender.com/comment/fetchAllComments/${videoId}`);
             setComments(response.data.commentsWithOwner);
         }
         catch (error) {
@@ -113,7 +113,7 @@ const ClickedVideo = () => {
         if (!newComment.trim()) return;
 
         try {
-            const response = await axios.post("http://localhost:3200/comment/addComment",
+            const response = await axios.post("https://dangle-video-watching-platform-2.onrender.com/comment/addComment",
                 {
                     videoId: video._id,
                     content: newComment,

@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const {data} = await axios.get('http://localhost:3200/user/me',
+                const {data} = await axios.get('https://dangle-video-watching-platform-2.onrender.com/user/me',
                     { withCredentials: true }
                 );
 
@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
 
         const logout=async ()=>{
             try{
-                await axios.post('http://localhost:3200/user/logout',
+                await axios.post('https://dangle-video-watching-platform-2.onrender.com/user/logout',
                     {},{withCredentials:true}
                 )
                 setUser(null);

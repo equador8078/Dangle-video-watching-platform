@@ -18,7 +18,7 @@ const SignUp = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:3200/user/signup", {
+            const response = await axios.post("https://dangle-video-watching-platform-2.onrender.com/user/signup", {
                 fullName, password, email
             })
             console.log(response.data.message);

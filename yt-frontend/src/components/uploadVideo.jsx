@@ -71,7 +71,7 @@ const Upload = () => {
             setProgress(0);
 
             const response = await axios.post(
-                "http://localhost:3200/videos/upload",
+                "https://dangle-video-watching-platform-2.onrender.com/videos/upload",
                 formData,
                 {
                     headers: { "Content-Type": "multipart/form-data" },
@@ -99,7 +99,7 @@ const Upload = () => {
 
         try {
             const response = await axios
-                .put(`http://localhost:3200/videos/updateVideo/${videoId}`,
+                .put(`https://dangle-video-watching-platform-2.onrender.com/videos/updateVideo/${videoId}`,
                     { title, description, category },
                     {
                         headers: { "Content-Type": "application/json" },

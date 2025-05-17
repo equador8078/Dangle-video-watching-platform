@@ -15,7 +15,7 @@ export const SubscriptionProvider = ({ children }) => {
             return;
         }
         try {
-            const response = await axios.get(`http://localhost:3200/user/getCreatorDetails`,
+            const response = await axios.get(`https://dangle-video-watching-platform-2.onrender.com/user/getCreatorDetails`,
                 { withCredentials: true }
             )
             setSubscriptionList(response.data.creatorsWithDetails)
@@ -27,7 +27,7 @@ export const SubscriptionProvider = ({ children }) => {
 
     const handelSubscription = async (creatorId) => {
         try {
-            const response = await axios.put(`http://localhost:3200/user/updateSubscription`,
+            const response = await axios.put(`https://dangle-video-watching-platform-2.onrender.com/user/updateSubscription`,
                 { creatorId: creatorId },
                 { withCredentials: true }
             )

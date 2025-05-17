@@ -9,7 +9,7 @@ const ChooseAvatar = ({ setImageUploadOpen }) => {
     const handleUploadProfileImage = async (url) => {
         try {
             const response=await axios.post(
-                "http://localhost:3200/user/uploadProfileImage",
+                "https://dangle-video-watching-platform-2.onrender.com/user/uploadProfileImage",
                 { avatarURL: url },
                 { withCredentials: true }
             );

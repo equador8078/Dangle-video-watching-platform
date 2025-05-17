@@ -32,7 +32,7 @@ const ActionMenu = ({ video, isCreator, setRefresh }) => {
         setDeleteLoading(true);
         try {
             const response = await axios.delete(
-                "http://localhost:3200/videos/deleteVideo",
+                "https://dangle-video-watching-platform-2.onrender.com/videos/deleteVideo",
                 {
                     data: { videoId, publicId },
                     withCredentials: true,
@@ -55,7 +55,7 @@ const ActionMenu = ({ video, isCreator, setRefresh }) => {
 
     const handelUpdateArchive = async () => {
         try {
-            await axios.post("http://localhost:3200/videos/updateArchive",
+            await axios.post("https://dangle-video-watching-platform-2.onrender.com/videos/updateArchive",
                 {
                     videoId: video._id,
                     forUpdatingArchive: true,
@@ -71,7 +71,7 @@ const ActionMenu = ({ video, isCreator, setRefresh }) => {
 
     const handelArchiveStatusFetch = async () => {
         try {
-            const response = await axios.post("http://localhost:3200/videos/updateArchive",
+            const response = await axios.post("https://dangle-video-watching-platform-2.onrender.com/videos/updateArchive",
                 {
                     videoId: video._id,
                     forUpdatingArchive: false,
@@ -90,7 +90,7 @@ const ActionMenu = ({ video, isCreator, setRefresh }) => {
     }, [open])
 
     const handleShare = async () => {
-        const shareUrl= `http://localhost:5173/videos/played/${video._id}`
+        const shareUrl= `https://dangle-video-watching-platform-2.onrender.com/videos/played/${video._id}`
         try {
             if (navigator.share) {
                 await navigator.share({

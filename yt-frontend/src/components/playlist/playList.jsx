@@ -14,7 +14,7 @@ const PlaylistSection = () => {
     useEffect(() => {
         const fetchPlaylists = async () => {
             try {
-                const response = await axios.get("http://localhost:3200/user/playlists", {
+                const response = await axios.get("https://dangle-video-watching-platform-2.onrender.com/user/playlists", {
                     withCredentials: true
                 });
                 setPlaylists(response.data);
@@ -44,7 +44,7 @@ const PlaylistSection = () => {
         setSinglePlaylist(playlist);
         try {
             if(playlist.videos && playlist.videos.length>0){
-            const response = await axios.get("http://localhost:3200/user/playlistVideos", {
+            const response = await axios.get("https://dangle-video-watching-platform-2.onrender.com/user/playlistVideos", {
                 params: {
                     videoIds: playlist.videos
                 },
@@ -65,7 +65,7 @@ const PlaylistSection = () => {
 
     const deletePlaylistVideo=async(playlistId,videoId)=>{
         try{
-            const response=await axios.delete(`http://localhost:3200/user/deletePlaylistVideo/${playlistId}/video/${videoId}`,
+            const response=await axios.delete(`https://dangle-video-watching-platform-2.onrender.com/user/deletePlaylistVideo/${playlistId}/video/${videoId}`,
                 {withCredentials:true}
             )
             const updatedPlaylist=response.data.playlist;

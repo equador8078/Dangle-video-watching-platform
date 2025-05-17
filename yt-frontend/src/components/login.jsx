@@ -14,7 +14,7 @@ const Login = () => {
     const handelLogin = async () => {
 
         try {
-            const response = await axios.post("http://localhost:3200/user/login", {
+            const response = await axios.post("https://dangle-video-watching-platform-2.onrender.com/user/login", {
                 email, password
             }, { withCredentials: true });
             console.log(response.data)

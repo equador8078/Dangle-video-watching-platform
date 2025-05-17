@@ -20,7 +20,7 @@ const YourVideo = () => {
         const fetchUserVideo = async () => {
             setLoading(true);
             try {
-                const response = await axios.get("http://localhost:3200/videos/userVideos", {
+                const response = await axios.get("https://dangle-video-watching-platform-2.onrender.com/videos/userVideos", {
                     withCredentials: true
                 });
                 
