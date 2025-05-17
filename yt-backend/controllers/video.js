@@ -8,6 +8,7 @@ const {generateEmbedding,cosineSimilarity}=require('./embedding')
 
 const uploadVideo = async (req, res) => {
     if (!req.file) {
+        console.log("❌ req.file is undefined");
         return res.status(400).json({ error: "No video file uploaded" });
     }
 
@@ -41,7 +42,8 @@ const uploadVideo = async (req, res) => {
 
         res.json({ message: 'Video uploaded successfully', video: newVideo });
     } catch (error) {
-        return res.status(500).json({ error: "Internal server error" });
+        console.log("❌ Error saving video:", error);
+        res.status(500).json({ error: "Internal server error" });
     }
 }
 
@@ -58,7 +60,7 @@ const fetchAllVideos = async (req, res) => {
         res.status(200).json(videosWithOwner);
     }
     catch (error) {
-        return;
+        console.log("Error fetching video", error);
     }
 }
 
@@ -70,7 +72,7 @@ const updateVideoViews = async (videoId) => {
         )
     }
     catch (error) {
-        return res.status(500);
+        console.log("Error while updating views")
     }
 }
 
@@ -84,7 +86,7 @@ const fetchSingleVideo = async (req, res) => {
         await updateVideoViews(videoId)
     }
     catch (error) {
-        return res.status(500);
+        console.log("error fetching single video ",error)
     }
     try {
         const video = await VIDEO.findById(videoId);
@@ -101,6 +103,7 @@ const fetchSingleVideo = async (req, res) => {
         res.status(200).json(videoWithOwner)
     }
     catch (error) {
+        console.log("some error occurred while fetching video: ", error)
         re.status(500).json({ message: "Internal server error!" })
     }
 }
@@ -108,7 +111,7 @@ const fetchSingleVideo = async (req, res) => {
 const fetchHistoryVideo = async (req, res) => {
     try {
         if(!req.user){
-            return ;
+            return;
         }
         const { watchHistory } = req.user;
 
@@ -196,6 +199,7 @@ const fetchUserVideos = async (req, res) => {
         return res.status(200).json({ message: `Video riteved successfully ${userId}`, videosWithOwner })
     }
     catch (error) {
+        console.log("Error fetching user videos ", error)
         return res.status(500).json({ message: "Internal Server Error" });
     }
 }
@@ -215,6 +219,7 @@ const updateVideo = async (req, res) => {
         return res.status(200).json({ message: "video updated successfully" })
     }
     catch (error) {
+        console.log("Error occurred while updating video",error);
         return res.status(400).json({ message: "Error while updating video" })
     }
 }
@@ -239,6 +244,7 @@ const handelDeleteVideo = async (req, res) => {
 
         return res.status(200).json({ message: "Video deleted successfully" });
     } catch (error) {
+        console.log("Deletion error:", error);
         return res.status(500).json({ message: "Internal server error" });
     }
 };
@@ -287,6 +293,7 @@ const fetchSideVideos = async (req, res) => {
         res.status(200).json(videosWithOwner);
     }
     catch (error) {
+        console.log(error);
         return res.status(500).json({ message: "Error while fetching side videos" })
     }
 }

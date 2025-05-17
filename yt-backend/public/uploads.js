@@ -3,7 +3,9 @@ const multer=require('multer');
 const uuidv4 = require('uuid').v4;
 const {CloudinaryStorage}=require('multer-storage-cloudinary')
 
-const storage=new CloudinaryStorage({
+const makeStorage=()=>{
+try{
+    const storage=new CloudinaryStorage({
     cloudinary:cloudinary,
     params:async (req,file)=>{
         let folder='youtube-clone';
@@ -15,6 +17,15 @@ const storage=new CloudinaryStorage({
         }
     },
 })
+const upload=multer({storage});
+return upload.single('video');
+}
+catch(error){
+    console.log("error in uploads ",error);
+    return;
+}
+}
+
 const deleteVideo = async (publicId) => {
     try {
         if (!publicId) {
@@ -35,7 +46,6 @@ const deleteVideo = async (publicId) => {
 };
 
 
-const upload=multer({storage});
 
 
-module.exports={upload,deleteVideo}
+module.exports={makeStorage,deleteVideo}

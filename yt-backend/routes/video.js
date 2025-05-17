@@ -1,11 +1,11 @@
 const express = require('express');
-const { upload} = require('../public/uploads');
+const { makeStorage} = require('../public/uploads');
 const { uploadVideo, fetchAllVideos, fetchSingleVideo, fetchHistoryVideo,
     updateLikeAndDislike, fetchUserVideos, updateVideo,handelDeleteVideo, archiveVideo,fetchSideVideos} = require('../controllers/video')
 
 const videoRouter = express.Router();
 
-videoRouter.post('/upload', upload.single('video'), uploadVideo);
+videoRouter.post('/upload', makeStorage() , uploadVideo);
 
 videoRouter.get('/getAllVideos', fetchAllVideos)
 
