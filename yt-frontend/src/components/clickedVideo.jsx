@@ -286,7 +286,7 @@ const ClickedVideo = () => {
                         <div className="mb-10">
                             <div className="flex flex-col gap-4">
                                 {sideVideos
-                                    .filter((v) => v._id != video._id)
+                                    .filter((v) => v._id != video._id && v.archive!=true)
                                     .map((video) => (
                                         <SideVideo key={video._id} video={video} />
                                     ))}

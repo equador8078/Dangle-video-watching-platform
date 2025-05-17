@@ -278,7 +278,7 @@ const fetchSideVideos = async (req, res) => {
     try {
         const currentVideoId = req.params.currentVideoId;
         const currVideo=await VIDEO.findById(currentVideoId);
-        const videos = await VIDEO.find().limit(100);
+        const videos = await VIDEO.find({archive:false}).limit(100);
 
         const videosWithOwner = await Promise.all(
             videos.map(async (video) => {
