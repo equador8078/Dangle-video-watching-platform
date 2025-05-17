@@ -28,7 +28,6 @@ const PlaylistPop = ({ videoId, setShowPlaylist,setOpen }) => {
     const handleCreatePlaylist = async () => {
         if (!newPlaylistName.trim()) return;
         try {
-            console.log("Creating playlist...");
             const response=await axios.post(
                 `https://dangle-video-watching-platform-2.onrender.com/user/createPlaylist`,
                 { playlistName: newPlaylistName },

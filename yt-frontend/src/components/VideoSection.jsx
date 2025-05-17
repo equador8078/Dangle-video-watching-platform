@@ -53,9 +53,6 @@ const VideoSection = () => {
                 setChatMessages((prev) => [...prev, { sender: "ai", text: response.data.reply }])
                 setVideo(response.data.videos || [])
             }
-            else {
-                console.log("No response has been received!")
-            }
         }
         catch (error) {
             console.log("error while sending prompt ", error);

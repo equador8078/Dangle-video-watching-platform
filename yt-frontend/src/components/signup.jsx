@@ -21,7 +21,6 @@ const SignUp = () => {
             const response = await axios.post("https://dangle-video-watching-platform-2.onrender.com/user/signup", {
                 fullName, password, email
             })
-            console.log(response.data.message);
             setError("");
             navigate("/user/login")
             window.alert("Sign up successfully! Please login!")
@@ -37,7 +36,6 @@ const SignUp = () => {
                 window.alert("User not exists!")
             }
         }
-        console.log("Sign up successful!");
         return;
     };
 

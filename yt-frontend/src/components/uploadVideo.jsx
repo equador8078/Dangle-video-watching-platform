@@ -107,7 +107,6 @@ const Upload = () => {
                     }
                 )
             alert("Video details Updated successfully!");
-            console.log(response.data);
 
         }
         catch (error) {

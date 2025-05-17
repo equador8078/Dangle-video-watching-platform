@@ -17,7 +17,6 @@ const Login = () => {
             const response = await axios.post("https://dangle-video-watching-platform-2.onrender.com/user/login", {
                 email, password
             }, { withCredentials: true });
-            console.log(response.data)
 
             if (response.status === 200) {
                 setUser({

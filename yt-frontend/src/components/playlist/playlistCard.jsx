@@ -8,6 +8,7 @@ const PlaylistCard = ({ playlist, setPlaylistRefresh, setVideosArray }) => {
         }
         catch (error) {
             console.log("error while deleting playlist ", error)
+            return;
         }
         finally {
             setPlaylistRefresh(prev => !prev);

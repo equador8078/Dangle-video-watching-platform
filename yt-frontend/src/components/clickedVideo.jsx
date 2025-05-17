@@ -48,9 +48,6 @@ const ClickedVideo = () => {
             const response = await axios.get(`https://dangle-video-watching-platform-2.onrender.com/videos/getAVideo/${videoId}`,
                 { withCredentials: true }
             );
-            if (!response.data) {
-                console.log("No data fetched!!")
-            }
             setVideo(response.data);
             setLikes(response.data.likesCount)
             setDislikes(response.data.dislikeCount)

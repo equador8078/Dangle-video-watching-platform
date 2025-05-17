@@ -70,7 +70,6 @@ const PlaylistSection = () => {
             )
             const updatedPlaylist=response.data.playlist;
             setSinglePlaylist(updatedPlaylist)
-            console.log("updated playlist", updatedPlaylist)
 
             if(updatedPlaylist.videos.length===0){
                 setVideosArray([]);
