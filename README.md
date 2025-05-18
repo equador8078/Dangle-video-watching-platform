@@ -64,13 +64,15 @@ Dangle is a full-stack video-sharing platform that allows users to upload, manag
 
 ## 📦 Scripts
 
-At root:
+At the root of the project:
+
 ```bash
-npm run dev           # Starts backend server using nodemon
-npm run build         # Installs frontend & backend deps and builds frontend
+npm run dev            # Starts backend server using nodemon
+npm run build          # Installs frontend & backend dependencies and builds frontend
+```
 
 
-### 🔧 **Environment Variables**
+## 🔧 Environment Variables
 
 Create a `.env` file inside the `yt-backend/` directory with the following content:
 
@@ -81,4 +83,5 @@ JWT_SECRET=your_jwt_secret
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
+```
 
