@@ -66,12 +66,15 @@ At root:
 npm run dev           # Starts backend server using nodemon
 npm run build         # Installs frontend & backend deps and builds frontend
 
-🔧 **Environment Variables**
-Create a .env file in yt-backend/ with the following:
+### 🔧 **Environment Variables**
 
+Create a `.env` file inside the `yt-backend/` directory with the following content:
+
+```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
+
