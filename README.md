@@ -49,6 +49,7 @@ Dangle is a full-stack video-sharing platform that allows users to upload, manag
 
 ## 📁 Project Structure
 
+.
 ├── yt-backend/ # Node.js backend (Express + MongoDB)
 │ └── index.js # Server entry point
 ├── yt-frontend/ # React frontend
@@ -60,11 +61,14 @@ Dangle is a full-stack video-sharing platform that allows users to upload, manag
 
 ---
 
+
 ## 📦 Scripts
 
 At root:
+```bash
 npm run dev           # Starts backend server using nodemon
 npm run build         # Installs frontend & backend deps and builds frontend
+
 
 ### 🔧 **Environment Variables**
 
